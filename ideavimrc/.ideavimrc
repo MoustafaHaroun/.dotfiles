@@ -1,0 +1,66 @@
+set relativenumber
+set number
+set ignorecase
+set smartcase
+set clipboard+=unnamed
+set timeoutlen=500
+
+set NERDTree
+set commentary
+
+let mapleader = " "
+
+
+""" NERDTree Commands
+nnoremap <leader>e :NERDTreeToggle<CR>
+nnoremap <leader>nf :NERDTreeFocus<CR>
+map <Leader>g :action CheckinProject<CR>
+
+""" View modes
+nnoremap <c-z> :action ToggleFullScreen<CR>
+nnoremap <c-x> :action ToggleZenMode<CR>
+
+""" Terminal
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+
+" Navigation between editor groups
+nmap <silent> <C-h> <Action>(PreviousSplitter)
+nmap <silent> <C-l> <Action>(NextSplitter)
+nmap <silent> <C-k> <Action>(Up)
+nmap <silent> <C-j> <Action>(Down)
+
+""" rename/refactor action
+nnoremap <leader>r :action RenameElement<CR>
+
+" Tab navigation
+nmap <Tab> <Action>(NextTab)
+nmap <S-Tab> <Action>(PreviousTab)
+
+" File operations
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fs <Action>(SaveAll)
+nmap <leader>bd <Action>(CloseContent)
+
+" Code actions
+nmap <leader>ca <Action>(ShowIntentionActions)
+nmap <S-k> <Action> (ShowErrorDescription)
+
+" Move line up and down
+nnoremap J :m .+1<CR>==
+nnoremap K :m .-2<CR>==
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+
+" Find/references
+nmap <leader>gr <Action>(GotoDeclaration)
+nmap <leader>gi <Action>(GotoImplementation)
+nmap <leader>sg <Action>(FindInPath)
+nmap <leader>rg <Action>(ReplaceInPath)
+nnoremap <leader>sf :action Find<CR>
+nnoremap <leader>rf :action Replace<CR>
+
+" Line moving
+let g:move_key_modifier = 'S'
+vmap <S-j> :m '>+1<CR>gv=gv
+vmap <S-k> :m '<-2<CR>gv=gv
