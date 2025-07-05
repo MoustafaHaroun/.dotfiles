@@ -3,13 +3,11 @@ set number
 set ignorecase
 set smartcase
 set clipboard+=unnamed
-set timeoutlen=500
 
 set NERDTree
 set commentary
 
 let mapleader = " "
-
 
 """ NERDTree Commands
 nnoremap <leader>e :NERDTreeToggle<CR>
@@ -39,18 +37,13 @@ nmap <S-Tab> <Action>(PreviousTab)
 
 " File operations
 nmap <leader>ff <Action>(GotoFile)
+nmap <leader>/ <Action>(SearchEverywhere)
 nmap <leader>fs <Action>(SaveAll)
 nmap <leader>bd <Action>(CloseContent)
 
 " Code actions
 nmap <leader>ca <Action>(ShowIntentionActions)
-nmap <S-k> <Action> (ShowErrorDescription)
-
-" Move line up and down
-nnoremap J :m .+1<CR>==
-nnoremap K :m .-2<CR>==
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
+nmap <S-k> <Action>(ShowErrorDescription)
 
 " Find/references
 nmap <leader>gr <Action>(GotoDeclaration)
@@ -59,8 +52,3 @@ nmap <leader>sg <Action>(FindInPath)
 nmap <leader>rg <Action>(ReplaceInPath)
 nnoremap <leader>sf :action Find<CR>
 nnoremap <leader>rf :action Replace<CR>
-
-" Line moving
-let g:move_key_modifier = 'S'
-vmap <S-j> :m '>+1<CR>gv=gv
-vmap <S-k> :m '<-2<CR>gv=gv
