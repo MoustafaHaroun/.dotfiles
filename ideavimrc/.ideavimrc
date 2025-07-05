@@ -28,9 +28,6 @@ nmap <silent> <C-l> <Action>(NextSplitter)
 nmap <silent> <C-k> <Action>(Up)
 nmap <silent> <C-j> <Action>(Down)
 
-""" rename/refactor action
-nnoremap <leader>r :action RenameElement<CR>
-
 " Tab navigation
 nmap <Tab> <Action>(NextTab)
 nmap <S-Tab> <Action>(PreviousTab)
@@ -41,9 +38,13 @@ nmap <leader>/ <Action>(SearchEverywhere)
 nmap <leader>fs <Action>(SaveAll)
 nmap <leader>bd <Action>(CloseContent)
 
+nnoremap <leader>f :action ReformatCode<CR>
+nnoremap <leader>F :action ReformatWithOptions<CR>
+
 " Code actions
 nmap <leader>ca <Action>(ShowIntentionActions)
 nmap <S-k> <Action>(ShowErrorDescription)
+nnoremap <leader>r :action RenameElement<CR>
 
 " Find/references
 nmap <leader>gr <Action>(GotoDeclaration)
