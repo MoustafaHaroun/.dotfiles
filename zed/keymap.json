@@ -1,0 +1,73 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Pane",
+    "bindings": {
+      "space b d": "pane::CloseActiveItem",
+    },
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "space b d": null,
+    },
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space f f": "file_finder::Toggle",
+      "space s g": "pane::DeploySearch",
+      "space e": "workspace::ToggleLeftDock",
+      "ctrl-j": "terminal_panel::ToggleFocus",
+      "ctrl-h": "project_panel::ToggleFocus",
+      "ctrl-l": "workspace::ActivateNextPane",
+      "ctrl- s": "workspace::Save",
+
+      "space f r": "editor::FindAllReferences",
+      "space r n": "editor::Rename",
+    },
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "space ,": "workspace::NewTerminal",
+      "space b d": "pane::CloseActiveItem",
+    },
+  },
+  {
+    "context": "ProjectPanel",
+    "bindings": {
+      "space e": "workspace::ToggleLeftDock",
+    },
+  },
+  {
+    "context": "ProjectSearchBar",
+    "bindings": {
+      "shift-l": null,
+      "shift-h": null,
+      "space b d": null,
+      "escape escape": "pane::CloseActiveItem",
+    },
+  },
+  {
+    "context": "Markdown",
+    "bindings": {
+      "ctrl-j": "vim::PageDown",
+      "ctrl-k": "vim::PageUp",
+    },
+  },
+  {
+    "context": "(VimControl && !menu)",
+    "bindings": {
+      "shift-tab": "pane::ActivatePreviousItem",
+      "tab": "pane::ActivateNextItem",
+    },
+  },
+]
